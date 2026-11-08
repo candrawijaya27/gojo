@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: transparent;
+    /* Menggunakan font bubble 'Fredoka' dengan cadangan sans-serif */
+    font-family: 'Fredoka', sans-serif;
+    overflow: hidden;
+}
+
+/* Container Utama Alert */
+.alert-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Saat Alert Muncul */
+.alert-container.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Kotak Pesan Utama dengan Garis Neon Biru Terang & Efek Glow */
+.alert-content {
+    position: relative;
+    width: 480px;
+    min-height: 120px;
+    padding: 22px 25px;
+    border-radius: 20px; /* Sudut lebih melengkung agar kesan bubblenya dapat */
+    border: 2.5px solid #00d2ff;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.8), 
+        0 0 15px rgba(0, 210, 255, 0.7), 
+        inset 0 0 15px rgba(0, 210, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+/* Background GIF Animasi Gojo Satoru */
+.alert-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://ik.imagekit.io/5ivk7z7ne/gojo%20satoru.gif?updatedAt=1794047158631');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.38;
+    z-index: -1;
+    border-radius: 18px;
+}
+
+/* Area Teks Full di dalam Kotak */
+.alert-text-area {
+    width: 100%;
+    z-index: 5;
+    text-align: left;
+}
+
+/* Styling Teks Bergaya Bubble */
+.alert-title {
+    color: #00d2ff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.6), 1px 1px 3px rgba(0,0,0,0.9);
+}
+
+.alert-username {
+    color: #ffffff;
+    font-size: 25px; /* Sedikit diperbesar agar bentuk bubblenya makin menonjol */
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 2px 2px 5px rgba(0,0,0,0.9);
+}
+
+.alert-message {
+    color: #e2e8f0;
+    font-size: 15px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+}
